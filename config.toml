@@ -1,72 +1,48 @@
-baseurl = "/"
+baseURL = "https://www.example.com/"
 languageCode = "en-us"
-theme = "terminal"
-paginate = 5
+title = "Hatch"
+themesDir = "themes"
+theme = "hugo-hero-theme"
 
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.92.0"
+    
 [params]
-  # dir name of your main content (default is `content/posts`).
-  # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "posts"
+  google_analytics_id=""
 
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "orange"
+#  [params.logo]
+#    mobile = "images/logo-mobile.svg"
+#    mobile_height = "36px"
+#    mobile_width = "36px"
+#    desktop = "images/logo.svg"
+#    desktop_height = "29px"
+#    desktop_width = "217px"
+#    alt = "Hugo Hero"
 
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  [params.homepage_meta_tags]
+    meta_description = "Hero is a multipurpose Hugo theme with fullscreen hero images and page sections. It contains content types for a business or portfolio site."
+    meta_og_title = "Hugo Hero Theme"
+    meta_og_type = "website"
+    meta_og_url = "https://hugo-hero.netlify.app"
+    meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-hero-theme/master/images/tn.png"
+    meta_og_description = "Hero is a multipurpose Hugo theme with fullscreen hero images and page sections. It contains content types for a business or portfolio site."
+    meta_twitter_card = "summary"
+    meta_twitter_site = "@zerostaticio"
+    meta_twitter_creator = "@zerostaticio"
 
-  # show selector to switch language
-  showLanguageSelector = false
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
 
-  # set theme to full screen width
-  fullWidthTheme = true
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
 
-  # center theme with default width
-  centerTheme = true
 
-  # set a custom favicon (default is a `themeColor` square)
-  # favicon = "favicon.ico"
-
-  # set post to show the last updated
-  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = false
-  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
-  # updatedDatePrefix = "Updated"
-
-  # set all headings to their default size (depending on browser settings)
-  # it's set to `true` by default
-  # oneHeadingSize = false
-
-[params.twitter]
-  # set Twitter handles for Twitter cards
-  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
-  # do not include @
-  creator = ""
-  site = ""
-
-[languages]
-  [languages.en]
-    languageName = "English"
-    title = "HatchTech"
-    subtitle = "A simple, retro theme for Hugo"
-    owner = ""
-    keywords = ""
-    copyright = ""
-    menuMore = "Show more"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    missingContentMessage = "Page not found..."
-    missingBackButtonLabel = "Back to home page"
-
-    [languages.en.params.logo]
-      logoText = "HatchTech"
-      logoHomeLink = "/"
-
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/pages/about"
-      [[languages.en.menu.main]]
-        identifier = "kerry"
-        name = "Kerry"
-        url = "https://www.kerryhatcher.com/"
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
+  pages = "/:filename/"
