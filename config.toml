@@ -1,6 +1,6 @@
-baseURL = "https://www.example.com/"
+baseURL = "/"
 languageCode = "en-us"
-title = "Hatch"
+title = "HatchTech"
 themesDir = "themes"
 theme = "hugo-hero-theme"
 
